@@ -227,16 +227,16 @@ db.persons.find({age : 33});
 Let’s suppose we want to have an index on age so that our queries are fast. We would use:
 
 ```cpp
-c.ensureIndex("tutorial.persons", fromjson("{age:1}"));
+c.createIndex("tutorial.persons", fromjson("{age:1}"));
 ```
-
-The ensureIndex method checks if the index exists; if it does not, it is created. ensureIndex is intelligent and does not repeat transmissions to the server; thus it is safe to call it many times in your code, for example, adjacent to every insert operation.
 
 In the above example we use a new function, fromjson. fromjson converts a JSON string to a BSONObj. This is sometimes a convenient way to specify BSON. Alternatively, we could have written:
 
 ```cpp
-c.ensureIndex("tutorial.persons", BSON( "age" << 1 ));
+c.createIndex("tutorial.persons", BSON( "age" << 1 ));
 ```
+
+While calling createIndex multiple times won't result in duplicate index creation on the server, it will cause an extra network round-trip and server operation for each call. It's best practice to use this method sparingly, for example once at the beginning of your code, or perhaps in an external setup script that configures the database for your application.  For more information about indexing, see the [MongoDB Indexing docs](http://docs.mongodb.org/manual/indexes/).
 
 ### Sorting
 
