@@ -52,7 +52,7 @@ Individual integration tests can be run in the same way as individual unit tests
 
 ### Client Example Programs
 
-The driver ships with a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/SConscript.client#L158-L171), and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
+The driver includes a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/SConscript.client#L158-L171), and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
 
 Build the examples with scons:
 
