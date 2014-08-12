@@ -120,7 +120,7 @@ From the directory where you cloned the code, compile the C++ driver by running 
 To see the list of all SCons options, run: `scons --help`
 
 #### SCons Options when Compiling the C++ Driver
-Select options as appropriate for your environment.
+Select options as appropriate for your environment. Please note that some flags may not be available on older versions.
 
 **Important 26compat Note**: If you are using the 26compat branch, the `install-mongoclient` target is only enabled when the `--full` flag is provided. Similarly, you must use the `--use-system-boost` flag when building 26compat.
 
