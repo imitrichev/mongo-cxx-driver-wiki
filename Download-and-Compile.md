@@ -12,7 +12,7 @@
     - [Build Options](Download%20and%20Compile#build-options)
     - [SCons Options](Download%20and%20Compile#scons-options) 
     - [Compiler Options](Download%20and%20Compile#compiler-options)
-    - [Compiler Options](Download%20and%20Compile#windows-options)
+    - [Windows Options](Download%20and%20Compile#windows-options)
     - [Mac OS X Options](Download%20and%20Compile#mac-os-x-options)
     - [Deprecated Options](Download%20and%20Compile#deprecated-options)
   - [Windows Considerations](Download%20and%20Compile#windows-considerations)
