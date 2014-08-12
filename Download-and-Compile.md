@@ -156,7 +156,7 @@ There are several targets you can build, but the most common target for users of
  - `--cc` The compiler to use for C. Use the following syntax: `--cc=<path-to-c-compiler>`
  - `--cxx` The compiler to use for C++. Use the following syntax: `--cxx=<path-to-c++-compiler>`
 
-##### Windows Options (Windows Only)
+##### Windows Options
  - `--dynamic-windows` By default, on Windows, compilation uses `/MT`. Use this flag to compile with `/MD`. Note that `/MD` is required to build the shared client on Windows. Also note that your application compiler flags must match. If you build with `--dbg=on`, `/MTd` or `/MDd` will be used in place of `/MT` or `/MD`, respectively.
 
 ##### Mac OS X Options (Mac OS X Only)
