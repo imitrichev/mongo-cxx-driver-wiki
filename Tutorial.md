@@ -47,7 +47,7 @@ int main() {
 If you are using gcc on Linux, you would compile with something like this, depending on location of your include files and libraries:
 
 ```sh
-$ g++ tutorial.cpp -pthread -lmongoclient -lboost_thread-mt -lboost_system -o tutorial
+$ g++ tutorial.cpp -pthread -lmongoclient -lboost_thread-mt -lboost_system -lboost_regex -o tutorial
 $ ./tutorial
 connected ok
 ```
