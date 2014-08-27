@@ -50,7 +50,7 @@ Build and run all the integration tests:
 
 Individual integration tests can be run in the same way as individual unit tests, shown above.
 
-Note: to run the SASL integration tests, you should build with the ```--use-sasl-client``` option.
+Note: to run the SASL integration tests, you should build with the ```--use-sasl-client``` flag.
 
 ### Client Example Programs
 
