@@ -1,4 +1,4 @@
-## [Home](Home)
+### [Home](Home)
 
 ### Getting Started
 
