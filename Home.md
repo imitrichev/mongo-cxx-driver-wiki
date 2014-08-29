@@ -13,7 +13,7 @@ The MongoDB C++ driver library includes a bson package that implements the BSON 
  - [Configuring the legacy-26compat driver](Configuring the 26Compat Driver)
 
 ### Testing
- - [Configuring the legacy driver](Testing)
+ - [Testing the legacy driver](Testing)
 
 ### Documentation
  - [API Documentation](http://api.mongodb.org/cxx/)
