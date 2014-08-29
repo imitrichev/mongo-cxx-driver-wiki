@@ -5,8 +5,8 @@
 
 
 ### Configuration
- - [Configuration](Configuring the Legacy Driver)
- - [Configuration](Configuring the 26compat Driver)
+ - [Configuration (legacy)](Configuring the Legacy Driver)
+ - [Configuration (26compat)](Configuring the 26compat Driver)
 
 ### Testing
  - [Testing](Testing)
