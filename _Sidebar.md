@@ -1,3 +1,5 @@
+## [Home](Home)
+
 ### Getting Started
  - [Download and Compile](Download and Compile)
  - [Tutorial](Tutorial)
