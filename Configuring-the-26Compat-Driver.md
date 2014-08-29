@@ -1,4 +1,4 @@
-Configure SSL example:
+Configure SSL on the 26compat driver example:
 
 ```cpp
 #include "mongo/util/net/ssl_options.h"
