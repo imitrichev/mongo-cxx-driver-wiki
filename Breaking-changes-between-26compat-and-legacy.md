@@ -17,7 +17,7 @@ This page attempts to serve as a transition guide for those users looking to mig
 * The `install-mongoclient` target has been renamed to `install`
 * Unit tests are now built with `build-unit`, and run with `unit`
 * Integration tests are now built with `build-integration`, and run with `integration`
-* Examples are now built with `build-examples', and run with `examples`
+* Examples are now built with `build-examples`, and run with `examples`
 * On OSX the `--osx-version-min` flag will now default to the current OSX version
 * The `--full` flag is no longer required, and it is an error to specify it.
 * The `--d` and `--dd` flags have been removed. Use the `--opt` and `--dbg` flags instead.
