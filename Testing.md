@@ -34,7 +34,14 @@ Build and run an individual unit test:
 
 ### Integration Tests
 
-Integration tests require a local mongod to be running on port 27999.  These tests are located in ```src/mongo/unittest```.  There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L87-L93).
+Integration tests require a local mongod to be running on port 27999.  These tests are located in ```src/mongo/unittest```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. 
+
+Example mongod invocation to be executed prior to running integration tests:
+```
+> mongod --port 27999 --setParameter enableTestCommands=1
+```
+
+There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L87-L93).
 
 Build all the integration tests:
 
