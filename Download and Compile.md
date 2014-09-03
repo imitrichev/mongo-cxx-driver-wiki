@@ -44,7 +44,7 @@ If you are having difficulty building the driver after reading the below instruc
    - Examples: _apt-get install libboost-all-dev_, _built from source_, _windows binary install_
    - If you built boost from source, please include your boost build invocation as well.
  - The complete SCons invocation.
-   - Example: _scons -j10 install-mongoclient_
+   - Example: _scons -j10 install_
  - The output of the configure phase of the build.
  - The error you encountered. This may be compiler, SCons, or other output.
 
@@ -126,7 +126,7 @@ Select options as appropriate for your environment. Please note that some flags 
 
 ##### Targets
 
-There are several targets you can build, but the most common target for users of the library is `install-mongoclient`, which will build the driver, and install the driver and headers to the location specified with the `--prefix` argument. If no prefix is specified, `--prefix` defaults to a directory named ```build/install``` under the current source directory.
+There are several targets you can build, but the most common target for users of the library is `install`, which will build the driver, and install the driver and headers to the location specified with the `--prefix` argument. If no prefix is specified, `--prefix` defaults to a directory named ```build/install``` under the current source directory.
 
 **Important 26compat Note**: On the 26compat branch, the default argument to `--prefix` is `/usr/local`, so the build will fail unless you either build with `sudo`, or change the install prefix to a directory where you have write permissions.
 
