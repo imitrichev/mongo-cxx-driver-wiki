@@ -11,13 +11,13 @@ Unit tests do not require a running mongod, and in fact will not run if you have
 Build all the unit tests with scons:
 
 ```
-> scons unittests
+> scons build-unit
 ```
 
 Build and run all the unit tests:
 
 ```
-> scons test
+> scons unit
 ```
 
 Build an individual unit test:
@@ -46,7 +46,7 @@ There is a list of the different integration tests [here](https://github.com/mon
 Build all the integration tests:
 
 ```
-> scons integration_tests
+> scons build_integration
 ```
 
 Build and run all the integration tests:
@@ -66,17 +66,15 @@ The driver includes a number of example programs of its use.  The examples are l
 Build the examples with scons:
 
 ```
-> scons clientTests
+> scons build-examples
 ```
 
 Build and run the examples:
 
 ```
-> scons smokeClient
+> scons examples
 ```
 
 ### Helpful Scons Flags
-
-```--osx-version-min=10.9``` - needed for OSX Mavericks.
 
 ```--cache``` - use an object cache for builds.
