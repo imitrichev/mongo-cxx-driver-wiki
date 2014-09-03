@@ -46,7 +46,7 @@ There is a list of the different integration tests [here](https://github.com/mon
 Build all the integration tests:
 
 ```
-> scons build_integration
+> scons build-integration
 ```
 
 Build and run all the integration tests:
