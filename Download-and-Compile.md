@@ -109,6 +109,7 @@ git checkout legacy
 Use the [26compat](https://github.com/mongodb/mongo-cxx-driver/tree/26compat) branch if:
  - You need a production ready release of the C++ driver that is not under active development.
  - You have existing code that used the driver from the server source and want it to continue working without modification.
+ - *Note that the Scons targets have changed in the legacy branch. Please see [Breaking changes between 26compat and legacy](https://github.com/mongodb/mongo-cxx-driver/wiki/Breaking%20changes%20between%2026compat%20and%20legacy) for details.
 
 ```
 git checkout 26compat
