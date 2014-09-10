@@ -34,6 +34,10 @@ void run() {
 }
 
 int main() {
+    Status status = mongo::client::initialize();
+    if (!status.isOK()) {
+        std::cout << "failed to initialize client driver: " << status.toString() << std::endl;
+    }
     try {
         run();
         std::cout << "connected ok" << std::endl;
