@@ -13,7 +13,7 @@ This page attempts to serve as a transition guide for those users looking to mig
 # Breaking Changes
 
 ## Changes to the build system
-* The `mongoclient` target has been created to built the client library without installing it
+* The `driver` target has been created to built the client library without installing it
 * The `install-mongoclient` target has been renamed to `install`
 * Unit tests are now built with `build-unit`, and run with `unit`
 * Integration tests are now built with `build-integration`, and run with `integration`
