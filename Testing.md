@@ -74,7 +74,11 @@ Build and run the examples:
 ```
 > scons examples
 ```
-
+### Run all tests
+Run the unit tests, integration tests, and examples with scons:
+```
+> scons test
+```
 ### Helpful Scons Flags
 
 ```--cache``` - use an object cache for builds.
