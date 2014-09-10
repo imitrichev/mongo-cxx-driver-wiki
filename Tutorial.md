@@ -34,10 +34,7 @@ void run() {
 }
 
 int main() {
-    Status status = mongo::client::initialize();
-    if (!status.isOK()) {
-        std::cout << "failed to initialize client driver: " << status.toString() << std::endl;
-    }
+    mongo::client::initialize();
     try {
         run();
         std::cout << "connected ok" << std::endl;
@@ -47,6 +44,7 @@ int main() {
     return EXIT_SUCCESS;
 }
 ```
+(Note that in a production environment, the return value of `mongo::client::initialize()` must be checked)
 
 If you are using gcc on Linux, you would compile with something like this, depending on location of your include files and libraries:
 
