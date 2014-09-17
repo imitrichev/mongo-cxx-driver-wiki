@@ -6,15 +6,15 @@ In the legacy-0.9 development cycle, the mechanism by which the driver is config
 
 ## The `mongo::client::initialize` function
 
-The `mongo::client::initialize` function, found in file `src/mongo/client/init.h` configures the driver and starts background threads critical to the functioning of the driver. The function has a single parameter receiving a `mongo::client::Options` object. If no value is provided, a default constructed `mongo::client::Options` object is used.
+The `mongo::client::initialize` function, found in file [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h) configures the driver and starts background threads critical to the functioning of the driver. The function has a single parameter receiving a `mongo::client::Options` object. If no value is provided, a default constructed `mongo::client::Options` object is used.
 
 To configure the driver to use non-default parameters, construct a new `mongo::client::Options` object and use its setter methods to configure the parameters of interest, and pass this object to `mongo::client::initialize`.
 
-It is strongly recommended that you invoke `mongo::client::initialize` as early as possible in your application startup phase, preferably before any additional threads have been created.
+This method must be called exactly once by your application. Invoke `mongo::client::initialize` as early as possible in your application startup phase, before any additional threads have been created.
 
 ## The `mongo::client::terminate` function
 
-When it is time to stop using the client driver, you may terminate its background tasks and release resources by invoking the `mongo::client::terminate` function, found in file `src/mongo/client/init.h`. However, please note that by default, you do not need to do so, since the behavior of `mongo::client::initialize` with a default constructed `mongo::client::Options` object is to organize an automatic invocation of `mongo::client::terminate` by way of `atexit`.
+When it is time to stop using the client driver, you may terminate its background tasks and release resources by invoking the `mongo::client::terminate` function, found in file [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h). However, please note that by default, you do not need to do so, since the behavior of `mongo::client::initialize` with a default constructed `mongo::client::Options` object is to organize an automatic invocation of `mongo::client::terminate` by way of `atexit`.
 
 The `mongo::client::terminate` function takes a grace period argument, specified in milliseconds. The shutdown routine will give background tasks the selected grace period to terminate cleanly. If they do not do so, `mongo::client::terminate` will return an error status. If the returned error status is `ExceededTimeLimit` it is safe to retry the call to `mongo::client::terminate`. Otherwise, a non-OK return status from `mongo::client::terminate` represents a permanent failure to shut down the driver cleanly. Please see the documentation for `mongo::client::terminate` for additional details.
 
@@ -24,9 +24,9 @@ If you would prefer to explicitly manage the lifetime of the driver and not rely
 
 ### Where to find it
 
-Configuration of the driver is managed through a new class, added in the `legacy-0.9.0` release, called `Options`. This class is hosted in the `mongo::client` namespace, and is defined in the header `mongo/client/options.h`.
+Configuration of the driver is managed through a new class, added in the `legacy-0.9.0` release, called `Options`. This class is hosted in the `mongo::client` namespace, and is defined in the header [`mongo/client/options.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/options.h).
 
-### Passing an instance to `mongo::client::initialize`
+### Passing options to `mongo::client::initialize`
 
 By default, calling `mongo::client::initialize()` with no parameters is equivalent to calling `mongo::client::initialize(mongo::client::Options())` passing a default constructed `mongo::client::Options` object.
 
@@ -111,6 +111,18 @@ if (!status.isOK()) {
 - Type: `bool`
 - Default: `false`
 - Semantics: This flag only has an effect if `Options::current::SSLMode` is `Options::kSSLRequired`. Setting this option to `true` suppresses validation of certificates. In other words, invalid certificates will be accepted.
+
+#### `Options::setLogAppenderFactory` and `Options::logAppenderFactory`
+
+- Type: `Options::LogAppenderFactory
+- Default: none
+- Semantics: Use `setLogAppenderFactory` if you want to configure a custom appender to listen to the driver's internally logged messages. Setting such a factory will enable logging and relay logged messages to whatever appender you provide a factory method for. An example of how to do this can be found [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/examples/loggingTest.cpp). You may only configure one appender through startup options.
+
+#### `Options::setMinLoggedSeverity` and `Options::minLoggedSeverity'
+
+- Type: `logger::LogSeverity`
+- Default: LogSeverity::Log()
+- Semantics: When providing a custom log appender (see above) use this to set the minimum severity level of logged messages. Messages that are of less importance than the level you provide will not be logged.
 
 #### `Options::setValidateObjects` and `Options::validateObjects`
 
