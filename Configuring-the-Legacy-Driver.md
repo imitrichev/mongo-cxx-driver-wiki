@@ -114,14 +114,14 @@ if (!status.isOK()) {
 
 #### `Options::setLogAppenderFactory` and `Options::logAppenderFactory`
 
-- Type: `Options::LogAppenderFactory
+- Type: `Options::LogAppenderFactory`
 - Default: none
 - Semantics: Use `setLogAppenderFactory` if you want to configure a custom appender to listen to the driver's internally logged messages. Setting such a factory will enable logging and relay logged messages to whatever appender you provide a factory method for. An example of how to do this can be found [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/examples/loggingTest.cpp). You may only configure one appender through startup options.
 
 #### `Options::setMinLoggedSeverity` and `Options::minLoggedSeverity'
 
 - Type: `logger::LogSeverity`
-- Default: LogSeverity::Log()
+- Default: `LogSeverity::Log()`
 - Semantics: When providing a custom log appender (see above) use this to set the minimum severity level of logged messages. Messages that are of less importance than the level you provide will not be logged.
 
 #### `Options::setValidateObjects` and `Options::validateObjects`
