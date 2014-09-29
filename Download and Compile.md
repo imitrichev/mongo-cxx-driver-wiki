@@ -142,9 +142,8 @@ There are several targets you can build, but the most common target for users of
  - `--libpath=<path-to-libs>` Specifies path to additional libraries.
  - `--cpppath=<path-to-headers>` Specifies path to additional headers.
  - `--extrapath=<path-to-boost>` Specifies the path to your Boost libraries if they are not in a standard search path for your toolchain.
- - `--dllpath` Specifies the runtime search path for DLLs when running tests. Set this to the directory containing boost, ssl, or sasl DLLs as required.
-   - NOTE: This is a windows-only option.
-   - NOTE: This option is only available on the `legacy` branch at version legacy-0.10.0-pre or later.
+ - `--runtime-library-search-path` Specifies the runtime search path for dynamic libraries when running tests. Set this to the directory containing boost, ssl, or sasl DLLs as required.
+   - NOTE: This option is only available on the `legacy` branch at version legacy-0.10.0-pre or later. Prior to legacy-rc1, this option is available under the older `--dllpath` name.
 
 ##### Build Options
  - `--dbg=[on|off]` Enables runtime debugging checks. Defaults to off. Specifying `--dbg=on` implies `--opt=off` unless explicitly overridden with `--opt=on`.
