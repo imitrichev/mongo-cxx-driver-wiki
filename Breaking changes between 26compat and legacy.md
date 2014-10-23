@@ -34,11 +34,16 @@ This page attempts to serve as a transition guide for those users looking to mig
 * The `RamLog`, `RotatableFileAppender`, and `Console` classes have been removed from the logging subsystem.
 * In addition, many auxiliary types, functions, and headers that were either unused, or minimally used, have been removed from the distribution.
 * The `ensureIndex` and related methods have been removed. The replacement is the new `createIndex` method.
+* The `QUERY` macro has been replaced by `MONGO_QUERY`.
+* The `ConnectionString::parse` method now requires it's argument to be in the MongoDB URL ("mongodb://...") format. To use the old format, use the new `ConnectionString::parseDeprecated` method.
+* The `OpTime` class has been removed.
+* The `ConnectionPool` and `ScopedDbConnection` classes have been removed.
 
 ## Behavior Changes
 * The driver is now unlikely to function correctly unless `mongo::client::initialize` is invoked before using the driver APIs.
 * The driver no longer logs any output by default. You may configure and inject a logger to re-enable logging. See `src/mongo/client/examples/clientTest.cpp` for an example of how to enable logging.
 * Writes are now "[acknowledged](http://docs.mongodb.org/manual/core/write-concern/#write-concern-acknowledged)" by default. In all previous releases the default write concern was “[unacknowledged](http://docs.mongodb.org/manual/core/write-concern/#unacknowledged)”. This change may have performance and behavior implications for existing applications that did not confirm writes. You can read more about the change [here](http://docs.mongodb.org/manual/release-notes/drivers-write-concern/#driver-write-concern-change).
+* The default shutdown grace period is now zero which means the driver may block forever until a successful shutdown occurs.
 
 # Improvements
 
