@@ -193,7 +193,7 @@ Let’s now write a function which prints out the name (only) of all persons in 
 ```cpp
 void printIfAge(DBClientConnection& c, int age) {
     auto_ptr<DBClientCursor> cursor =
-        c.query("tutorial.persons", QUERY("age" << age));
+        c.query("tutorial.persons", MONGO_QUERY("age" << age));
     while (cursor->more()) {
         BSONObj p = cursor->next();
         cout << p.getStringField("name") << endl;
@@ -215,7 +215,7 @@ Our query above, written as JSON, is of the form
 
 `{ age : <agevalue> }`
 
-Queries are BSON objects of a particular format – in fact, we could have used the BSON() macro above instead of QUERY(). See class Query in dbclient.h for more information on Query objects, and the Sorting section below.
+Queries are BSON objects of a particular format – in fact, we could have used the BSON() macro above instead of MONGO_QUERY(). See class Query in dbclient.h for more information on Query objects, and the Sorting section below.
 
 In the mongo shell (which uses javascript), we could invoke:
 
@@ -245,13 +245,13 @@ While calling createIndex multiple times won't result in duplicate index creatio
 Let’s now make the results from printIfAge sorted alphabetically by name. To do this, we change the query statement from:
 
 ```cpp
-auto_ptr<DBClientCursor> cursor = c.query("tutorial.persons", QUERY("age" << age));
+auto_ptr<DBClientCursor> cursor = c.query("tutorial.persons", MONGO_QUERY("age" << age));
 ```
 
 to
 
 ```cpp
-auto_ptr<DBClientCursor> cursor = c.query("tutorial.persons", QUERY("age" << age ).sort("name"));
+auto_ptr<DBClientCursor> cursor = c.query("tutorial.persons", MONGO_QUERY("age" << age ).sort("name"));
 ```
 
 Here we have used `Query::sort()` to add a modifier to our query expression for sorting.
