@@ -287,6 +287,5 @@ This overview just touches on the basics of using MongoDB from C++. There are ma
  - See the language-independent [MongoDB Manual](http://docs.mongodb.org/manual/);
  - Experiment with the [mongo shell](http://docs.mongodb.org/manual/mongo/);
  - Review the [doxygen API docs](http://api.mongodb.org/cxx/current/index.html);
- - See [connecting pooling information](http://api.mongodb.org/cplusplus/current/classmongo_1_1_d_b_connection_pool.html) in the API docs;
  - See [GridFS file storage information](http://api.mongodb.org/cplusplus/current/classmongo_1_1_grid_f_s.html) in the API docs;
  - Consider getting involved to make the product (either C++ driver, tools, or the database itself) better!
