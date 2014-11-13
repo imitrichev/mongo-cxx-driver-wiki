@@ -3,7 +3,7 @@
 ### Getting Started
 
  - [Download and Compile](Download and Compile)
- - [Tutorial](Tutorial)
+ - [Tutorial (legacy and 26compat)](Tutorial)
  - [BSON Helper Functions](BSON Helper Functions)
 
 
