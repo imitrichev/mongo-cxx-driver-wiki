@@ -14,7 +14,7 @@
 
 ### Testing
 
- - [Testing](Testing)
+ - [Testing (legacy)](Testing)
 
 ### Documentation
 
