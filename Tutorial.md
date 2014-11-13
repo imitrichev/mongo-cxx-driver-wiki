@@ -1,6 +1,8 @@
-### Getting started with the C++ Driver
+### Getting started with the Legacy C++ Driver
 
 This is an introduction to usage of the MongoDB database from a C++ program.
+
+NOTE: this tutorial is for the legacy and 26compat versions of the C++ driver.
 
 First, install MongoDB – see the [installation](http://docs.mongodb.org/manual/installation/) page for details.
 
