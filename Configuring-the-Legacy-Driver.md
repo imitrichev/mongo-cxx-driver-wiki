@@ -10,13 +10,17 @@ The `mongo::client::initialize` function, found in file [`src/mongo/client/init.
 
 To configure the driver to use non-default parameters, construct a new `mongo::client::Options` object and use its setter methods to configure the parameters of interest, and pass this object to `mongo::client::initialize`.
 
-This method must be called exactly once by your application. Invoke `mongo::client::initialize` as early as possible in your application startup phase, before any additional threads have been created.
+This method must be called exactly once by your application. Invoke `mongo::client::initialize` as early as possible in your application startup phase, before any additional threads have been created. You must examine the return value of `mongo::client::initialize` and deal with any returned error appropriately.
 
 ## The `mongo::client::terminate` function
 
 When it is time to stop using the client driver, you must terminate its background tasks and release resources by invoking the `mongo::client::terminate` function, found in file [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h).
 
 The `mongo::client::terminate` function honors a grace period, specified in milliseconds, and defaulting to 'forever'. The shutdown routine will give background tasks the selected grace period to terminate cleanly. If they do not do so, `mongo::client::terminate` will return an error status. If the returned error status is `ExceededTimeLimit` it is safe to retry the call to `mongo::client::terminate`. Otherwise, a non-OK return status from `mongo::client::terminate` represents a permanent failure to shut down the driver cleanly. Please see the documentation for `mongo::client::terminate` for additional details. The value of the shutdown grace period may be changed from its default at driver initialization time by using an appropriately configured `mongo::client::Options` object.
+
+On some platforms, you may be able to arrange for `mongo::client::terminate` to be called via an atexit handler. To request this behavior, see the `setCallShutdownAtExit` option, documented below.
+
+Alternatively, you may use the `mongo::client::GlobalInstance` class, found in [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h), to instantiate an RAII type that will automatically initialize and terminate the driver.
 
 ## The `mongo::client::Options` class
 
