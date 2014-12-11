@@ -14,11 +14,9 @@ This method must be called exactly once by your application. Invoke `mongo::clie
 
 ## The `mongo::client::terminate` function
 
-When it is time to stop using the client driver, you may terminate its background tasks and release resources by invoking the `mongo::client::terminate` function, found in file [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h). However, please note that by default, you do not need to do so, since the behavior of `mongo::client::initialize` with a default constructed `mongo::client::Options` object is to organize an automatic invocation of `mongo::client::terminate` by way of `atexit`.
+When it is time to stop using the client driver, you must terminate its background tasks and release resources by invoking the `mongo::client::terminate` function, found in file [`src/mongo/client/init.h`](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/client/init.h).
 
-The `mongo::client::terminate` function takes a grace period argument, specified in milliseconds. The shutdown routine will give background tasks the selected grace period to terminate cleanly. If they do not do so, `mongo::client::terminate` will return an error status. If the returned error status is `ExceededTimeLimit` it is safe to retry the call to `mongo::client::terminate`. Otherwise, a non-OK return status from `mongo::client::terminate` represents a permanent failure to shut down the driver cleanly. Please see the documentation for `mongo::client::terminate` for additional details.
-
-If you would prefer to explicitly manage the lifetime of the driver and not rely on `atexit`, you may pass a `mongo::client::Options` object customized by invoking `Options::setCallShutdownAtExit(false)`. It is then the responsibility of the application code to make an appropriate call to `mongo::client::terminate`.
+The `mongo::client::terminate` function honors a grace period, specified in milliseconds, and defaulting to 'forever'. The shutdown routine will give background tasks the selected grace period to terminate cleanly. If they do not do so, `mongo::client::terminate` will return an error status. If the returned error status is `ExceededTimeLimit` it is safe to retry the call to `mongo::client::terminate`. Otherwise, a non-OK return status from `mongo::client::terminate` represents a permanent failure to shut down the driver cleanly. Please see the documentation for `mongo::client::terminate` for additional details. The value of the shutdown grace period may be changed from its default at driver initialization time by using an appropriately configured `mongo::client::Options` object.
 
 ## The `mongo::client::Options` class
 
@@ -53,14 +51,14 @@ if (!status.isOK()) {
 #### `Options::callShutdownAtExit` and `Options::setCallShutdownAtExit`
 
 - Type: `bool`
-- Default: `true`
+- Default: `false`
 - Semantics: If this option is 'true', then a successful call to `mongo::client::initialize` will schedule a call to `mongo::client::terminate` with `atexit`. The call to `mongo::client::terminate` will be made with the value of `mongo::client::Options::current::autoShutdownGracePeriodMillis`
 
 
 #### `Options::autoShutdownGracePeriodMillis` and `Options::setAutoShutdownGracePeriodMillis`
 
 - Type: `int`, interpreted as milliseconds
-- Default: 250
+- Default: 0 (wait forever)
 - Semantics: If `mongo::client::initialize` scheduled a call to `mongo::client::terminate` with `atexit`, then that call to `mongo::client::terminate` will use the value `Options::autoShutdownGracePeriodMillis` when calling `mongo::client::terminate`.
 
 
