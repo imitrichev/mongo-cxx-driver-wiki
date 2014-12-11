@@ -12,6 +12,12 @@ Next, you may wish to take a look at the [MongoDB Manual](http://docs.mongodb.or
 
 Please see [download and compile page](Download and Compile) for instructions on how to download, build, and install the C++ client driver.
 
+### Initializing the Driver Library
+
+Please see the following wiki pages for instructions on how to properly initialize and terminate the driver:
+ - [Configuring the legacy driver](Configuring-the-Legacy-Driver) (0.9+)
+ - [Configuring the legacy-26compat driver](Configuring the 26Compat Driver)
+
 ### Connecting
 
 #### DBClientConnection
