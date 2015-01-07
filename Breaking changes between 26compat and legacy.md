@@ -29,14 +29,13 @@ This page attempts to serve as a transition guide for those users looking to mig
 
 ## Changes to APIs
 * The `mongo::BSONBuilderBase` class has been removed and is no longer a base class of `mongo::BSONObjBuilder` or `mongo::BSONArrayBuilder`
-* The `mongo::OpTime` class no longer offers the `now` and related synchronized methods.
+* The `OpTime` class has been completely removed. It has been replaced by the simplified `Timestamp_t` class.
 * The `globalServerOptions` and `globalSSLOptions` objects and their classes have been removed. All driver configuration should be done through the new `mongo::client::Options` object.
 * The `RamLog`, `RotatableFileAppender`, and `Console` classes have been removed from the logging subsystem.
 * In addition, many auxiliary types, functions, and headers that were either unused, or minimally used, have been removed from the distribution.
 * The `ensureIndex` and related methods have been removed. The replacement is the new `createIndex` method.
 * The `QUERY` macro has been replaced by `MONGO_QUERY`.
 * The `ConnectionString::parse` method now requires it's argument to be in the MongoDB URL ("mongodb://...") format. To use the old format, use the new `ConnectionString::parseDeprecated` method.
-* The `OpTime` class has been removed.
 * The `ConnectionPool` and `ScopedDbConnection` classes have been removed.
 
 ## Behavior Changes
