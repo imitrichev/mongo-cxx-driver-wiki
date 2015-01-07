@@ -16,7 +16,7 @@ This page attempts to serve as a transition guide for those users looking to mig
 
 Scons targets have been renamed to more 'obvious' names, and some unused or unneeded targets have been removed.
 
-### Summary
+### cheat sheet
 
 Task                                  | Scons Target
 --------------------------------------|-----------------
