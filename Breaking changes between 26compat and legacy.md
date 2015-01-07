@@ -34,6 +34,7 @@ run all tests and client examples     |`test`
 
 ### Details
 
+* [`mongo-orchestration`](https://github.com/10gen/mongo-orchestration) is now required to run the driver's test suite. Please see the repository for instructions how to install and run `mongo-orchestration`.
 * The `driver` target has been created to built the client library without installing it
 * The `install-mongoclient` target has been renamed to `install`
 * Unit tests are now built with `build-unit`, and run with `unit`
