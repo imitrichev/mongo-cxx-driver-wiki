@@ -13,6 +13,27 @@ This page attempts to serve as a transition guide for those users looking to mig
 # Breaking Changes
 
 ## Changes to the build system
+
+Scons targets have been renamed to more 'obvious' names.
+
+### Summary
+
+Task                                  | Scons Target
+--------------------------------------|-----------------
+compile driver                        |`driver`
+install driver                        |`install`
+check driver install (used internally)|`check-install`
+build unit tests                      |`build-unit`
+run unit tests                        |`unit`
+build integration tests               |`build-integration`
+run integration tests                 |`integration`
+build client examples                 |`build-examples`
+run client examples                   |`examples`
+build everything (driver, unit tests, integration tests, examples|`all`
+run all tests and client examples     |`test`
+
+### Details
+
 * The `driver` target has been created to built the client library without installing it
 * The `install-mongoclient` target has been renamed to `install`
 * Unit tests are now built with `build-unit`, and run with `unit`
