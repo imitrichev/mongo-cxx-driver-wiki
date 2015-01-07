@@ -14,7 +14,7 @@ This page attempts to serve as a transition guide for those users looking to mig
 
 ## Changes to the build system
 
-Scons targets have been renamed to more 'obvious' names.
+Scons targets have been renamed to more 'obvious' names, and some unused or unneeded targets have been removed.
 
 ### Summary
 
