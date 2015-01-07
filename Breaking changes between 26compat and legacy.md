@@ -48,6 +48,8 @@ This page attempts to serve as a transition guide for those users looking to mig
 
 Please see the release notes for the individual legacy branch releases for details on improvements in each release:
 
+* [legacy-1.0.0-rc3](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc3)
+* [legacy-1.0.0-rc2](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc2)
 * [legacy-1.0.0-rc1](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc1)
 * [legacy-1.0.0-rc0](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc0)
 * [legacy-0.11.0](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-0.11.0)
