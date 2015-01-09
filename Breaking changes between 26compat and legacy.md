@@ -50,6 +50,7 @@ run all tests and client examples     |`test`
 * All build artifacts are now captured under the `build` directory.
 
 ## Changes to APIs
+* The `mongo::be`, `mongo::bo`, and `mongo::bob` typedefs for `mongo::BSONElement`, `mongo::BSONObj` and `mongo::BSONObjBuilder` have been removed. We recommend using the fully qualified names in new code.
 * The `mongo::BSONBuilderBase` class has been removed and is no longer a base class of `mongo::BSONObjBuilder` or `mongo::BSONArrayBuilder`
 * The `OpTime` class has been completely removed. It has been replaced by the simplified `Timestamp_t` class.
 * The `globalServerOptions` and `globalSSLOptions` objects and their classes have been removed. All driver configuration should be done through the new `mongo::client::Options` object.
