@@ -81,10 +81,10 @@ Include bson/bson.h in your application. See [bsondemo](https://github.com/mongo
 ##### Key classes
 
 ```cpp
-mongo::BSONObj (aka bson::bo): a BSON object
-mongo::BSONElement (bson::be): a single element in a BSON object. This is a key and a value.
-mongo::BSONObjBuilder (bson::bob): used to make BSON objects
-mongo::BSONObjIterator (bson::bo::iterator): used to enumerate BSON objects
+mongo::BSONObj: a BSON object
+mongo::BSONElement: a single element in a BSON object. This is a key and a value.
+mongo::BSONObjBuilder: used to make BSON objects
+mongo::BSONObjIterator: used to enumerate BSON objects
 ```
 
 ##### Working with BSON
@@ -132,22 +132,6 @@ BSONObj p = BSONObjBuilder().genOID().append("name","Joe").append("age",33).obj(
 ```
 
 Other helpers are listed [BSON Helpers](BSON Helper Functions).
-
-##### Short Class Names
-Add `using namespace bson;` to your code to use the following shorter names for the BSON classes:
-
-```cpp
-// from bsonelement.h
-namespace bson {
-    typedef mongo::BSONElement be;
-    typedef mongo::BSONObj bo;
-    typedef mongo::BSONObjBuilder bob;
-}
-```
-
-(Or one could use bson::bo fully qualified for example).
-
-Also available is bo::iterator as a synonym for BSONObjIterator.
 
 ### Inserting
 
