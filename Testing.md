@@ -34,16 +34,22 @@ Build and run an individual unit test:
 
 ### Integration Tests
 
-Integration tests require a local mongod to be running on port 27999.  These tests are located in ```src/mongo/unittest```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. 
-
-Example mongod invocation to be executed prior to running integration tests:
+Integration tests must run against [Mongo Orchestration](https://github.com/10gen/mongo-orchestration).  Install and setup Mongo Orchestration as follows:
 ```
-> mongod --port 27999 --setParameter enableTestCommands=1
+> git clone https://github.com/10gen/mongo-orchestration.git
+> cd mongo-orchestration
+> python setup.py install
+```
+To run Mongo Orchestration, you'll need to alter the provided config file to fit your system.  Open ```mongo-orchestration.config``` and replace the paths there with paths to your MongoDB binaries.  It is only required to have one MongoDB version defined, so feel free to keep one of the ```"releases"``` and delete the other entries.
+
+Start up Mongo Orchestration and leave it running in the background while you run the integration test suite:
+```
+> mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion>
 ```
 
-There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L87-L93).
+The integration tests are located in ```src/mongo/unittest```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L87-L93).
 
-Build all the integration tests:
+To build all the integration tests:
 
 ```
 > scons build-integration
