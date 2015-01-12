@@ -47,7 +47,7 @@ Start up Mongo Orchestration and leave it running in the background while you ru
 > mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion> start
 ```
 
-The integration tests are located in ```src/mongo/unittest```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L34-L47).
+The integration tests are located in ```src/mongo/integration```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L34-L47).
 
 To build all the integration tests:
 
