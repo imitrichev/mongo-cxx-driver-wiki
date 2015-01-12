@@ -44,7 +44,7 @@ To run Mongo Orchestration, you'll need to alter the provided config file to fit
 
 Start up Mongo Orchestration and leave it running in the background while you run the integration test suite:
 ```
-> mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion>
+> mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion> start
 ```
 
 The integration tests are located in ```src/mongo/unittest```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L87-L93).
