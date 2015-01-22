@@ -76,7 +76,7 @@ Note: to run the SASL integration tests, you should build with the ```--use-sasl
 
 ### Client Example Programs
 
-The driver includes a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/SConscript.client#L189, and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
+The driver includes a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/SConscript.client#L189), and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
 
 Build the examples with scons:
 
