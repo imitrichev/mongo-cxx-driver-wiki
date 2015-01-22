@@ -4,9 +4,18 @@ If you contribute to the C++ driver, you'll need to test your changes.  The driv
 
 Note: if you are running OS X Mavericks or above, you may need to include the ```--osx-version-min=10.9``` flag to the commands below.
 
+Note: The 26compat branch differs from the instructions below as follows:
+* MongoOrchestration is not required.
+* The target to run unit tests is 'smokeCppUnittests' (or 'test', or 'smoke'), not 'unit'
+* The build-[test] aliases are not supported (the run- aliases are supported, however)
+* There are no integration tests
+* The target to run the examples is 'smokeClient', not 'examples'
+* You must have a mongod running on port 27999 to run the examples.
+* The 'test' target does not run all tests, only the unit tests (see above).
+
 ### Unit tests
 
-Unit tests do not require a running mongod, and in fact will not run if you have a mongod running locally on port 27000.  These tests are designed to test individual components of the driver in isolation, and the test files are found in the same directory as the things they test (so, ```bson_validate.cpp``` and ```bson_validate_test.cpp``` are both found in ```src/mongo/bson```).  The different unit tests are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L36-L62).
+Unit tests do not require a running mongod or mongo-orchestration. These tests are designed to test individual components of the driver in isolation, and the test files are found in the same directory as the things they test (so, ```bson_validate.cpp``` and ```bson_validate_test.cpp``` are both found in ```src/mongo/bson```).  The different unit tests are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/mongo/SConscript#L49).
 
 Build all the unit tests with scons:
 
@@ -47,7 +56,7 @@ Start up Mongo Orchestration and leave it running in the background while you ru
 > mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion> start
 ```
 
-The integration tests are located in ```src/mongo/integration```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/mongo/SConscript#L34-L47).
+The integration tests are located in ```src/mongo/integration```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/mongo/SConscript#L114).
 
 To build all the integration tests:
 
@@ -67,7 +76,7 @@ Note: to run the SASL integration tests, you should build with the ```--use-sasl
 
 ### Client Example Programs
 
-The driver includes a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/legacy/src/SConscript.client#L158-L171), and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
+The driver includes a number of example programs of its use.  The examples are listed [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/SConscript.client#L189, and the source files are found in ```src/mongo/client/examples```.  The examples expect a mongod to be running locally on port 27999.
 
 Build the examples with scons:
 
@@ -80,11 +89,9 @@ Build and run the examples:
 ```
 > scons examples
 ```
+
 ### Run all tests
 Run the unit tests, integration tests, and examples with scons:
 ```
 > scons test
 ```
-### Helpful Scons Flags
-
-```--cache``` - use an object cache for builds.
