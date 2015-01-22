@@ -250,7 +250,7 @@ Here we have used `Query::sort()` to add a modifier to our query expression for 
 
 ### Updating
 
-Use the `update()` method to perform a database update . For example the following update in the mongo shell:
+Use the `update()` method to perform a database update. For example the following update in the mongo shell:
 
 ```js
 > use tutorial
@@ -268,6 +268,9 @@ db.update("tutorial.persons",
     BSON("$inc" << BSON( "visits" << 1))
 );
 ```
+
+The `update()` method can be used to modify specific fields, replace the entire existing document, insert new documents or update multiple documents.
+In the MongoDB Manual, examples are provided in the [Modify Documents Tutorial](http://docs.mongodb.org/manual/tutorial/modify-documents/).
 
 ### Arrays
 
