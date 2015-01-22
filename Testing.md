@@ -49,11 +49,11 @@ Integration tests must run against [Mongo Orchestration](https://github.com/10ge
 > cd mongo-orchestration
 > python setup.py install
 ```
-To run Mongo Orchestration, you'll need to alter the provided config file to fit your system.  Open ```mongo-orchestration.config``` and replace the paths there with paths to your MongoDB binaries.  It is only required to have one MongoDB version defined, so feel free to keep one of the ```"releases"``` and delete the other entries.
+To run Mongo Orchestration, you'll need to alter the provided config file to fit your system.  Open ```mongo-orchestration.config``` and replace the paths there with paths to your MongoDB binaries.  It is only required to have one MongoDB version defined as well as a last_updated field with a date, so feel free to keep one of the ```"releases"``` and delete the other entries. Mongo orchestration is **very** strict about JSON so no trailing commas please.
 
 Start up Mongo Orchestration and leave it running in the background while you run the integration test suite:
 ```
-> mongo-orchestration -f mongo-orchestration.config -e <yourMongoVersion> start
+> mongo-orchestration -f mongo-orchestration.config -e <release_name> start
 ```
 
 The integration tests are located in ```src/mongo/integration```.  Additionally, some tests require the parameter ```enableTestCommands``` to be set. There is a list of the different integration tests [here](https://github.com/mongodb/mongo-cxx-driver/blob/e240e0604678b1028aaee63e8de98e18047f7f31/src/mongo/SConscript#L114).
