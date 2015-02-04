@@ -3,7 +3,7 @@ The C++ driver builds on x86 and x86-64 architectures for Linux, Mac OS X, Windo
 The MongoDB C++ driver library includes a bson package that implements the BSON specification (see http://www.bsonspec.org). This library can be used standalone for object serialization and deserialization even when one is not using MongoDB at all.
 
 ### Getting Started
- - [Download and Compile](Download and Compile)
+ - [Download and Compile](Download-and-Compile)
  - Configuring the driver:
        - [Configuring the legacy driver](Configuring-the-Legacy-Driver) (0.9+)
        - [Configuring the legacy-26compat driver](Configuring the 26Compat Driver)
