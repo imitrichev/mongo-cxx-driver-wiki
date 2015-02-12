@@ -1,4 +1,9 @@
 ## (New) Driver Documentation
+
+### Maintainer Notes
+
+- [C++ Driver Versioning Scheme](C---Driver-Versioning-Scheme)
+
 ## Legacy Driver Documentation
 
 The legacy C++ driver builds on x86 and x86-64 architectures for Linux, Mac OS X, Windows, FreeBSD and Solaris.
