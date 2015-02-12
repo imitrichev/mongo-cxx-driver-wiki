@@ -24,4 +24,3 @@ The Legacy MongoDB C++ driver library includes a bson package that implements th
 
 ### Documentation
  - [Legacy API Documentation](http://api.mongodb.org/cxx/)
- - [SQL to Mongo Shell to C++](SQL to Shell to CPP)
