@@ -1,5 +1,5 @@
 # C++ Driver Versioning                                                                                                                                                                                           
-                                                                                                                                                                                                                  
+                                                                                                                                                                                         
 ## API Versioning                                                                                                                                                                                                 
                                                                                                                                                                                                                   
 * We use [semantic versioning](http://semver.org/).                                                                                                                                                               
@@ -7,8 +7,9 @@
                                                                                                                                                                                                                   
 ## ABI Versioning                                                                                                                                                                                                 
                                                                                                                                                                                                                   
-* Both bsoncxx and mongocxx both have a single scalar ABI version.                                                                                                                                                
+* Both bsoncxx and mongocxx both have a single scalar ABI version.                                                                                                                                             
 * Only bump ABI version on **incompatible** ABI change (not for ABI additions).                                                                                                                                   
+* **We stay on ABI version 0 (without bumping for incompatible changes) until ABI is stable.**
                                                                                                                                                                                                                   
 ## Parallel Header Installation                                                                                                                                                                                   
                                                                                                                                                                                                                   
