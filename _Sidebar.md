@@ -4,6 +4,7 @@
 ## New Driver Docs
 
 - [Versioning](C---Driver-Versioning-Scheme)
+- [API Documentation](http://mongodb.github.io/mongo-cxx-driver/)
 
 ## Legacy Docs
 
