@@ -13,7 +13,7 @@ This commit essentially removes the -pre (1.0.0-rc79-pre -> 1.0.0-rc79) and crea
 
  - `git tag legacy-x.y.z[-pre]`
 
-### POST commit
+### POST commit (increment version and add -pre)
 
 This commit prepares the branch for new commits towards a future release (1.0.0-rc79 -> 1.0.0-rc80-pre)
 
