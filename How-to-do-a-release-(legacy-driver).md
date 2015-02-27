@@ -26,6 +26,11 @@ This commit prepares the branch for new commits towards a future release (1.0.0-
  - `git push origin master`
  - `git push origin master --tags`
 
+### Release on GitHub
+
+ - Hit up the [github releases page](https://github.com/mongodb/mongo-cxx-driver/releases)
+ - Draft and publish a new release against the tag you just pushed
+
 ### Release on Jira
 
  - Go [here](https://jira.mongodb.org/plugins/servlet/project-config/CXX/versions)
