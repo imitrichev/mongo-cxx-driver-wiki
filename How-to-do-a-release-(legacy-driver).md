@@ -32,7 +32,7 @@ This commit prepares the branch for new commits towards a future release (1.0.0-
  - Click the cog next to the version you are about to release and select "Release"
  - Follow the dialogs/wizards and whatnot
 
-### Generate documentation
+### Generate and publish documentation
 
  - Clone the [apidocs repo](https://github.com/mongodb/apidocs)
  - run python2 build.py cxx
