@@ -1,4 +1,4 @@
-# How to do a release (of the legacy driver)
+## How to do a release (legacy driver)
 
 ### BUMP commit (to remove -pre)
 
