@@ -57,7 +57,7 @@ run all tests and client examples     |`test`
 * The `RamLog`, `RotatableFileAppender`, and `Console` classes have been removed from the logging subsystem.
 * In addition, many auxiliary types, functions, and headers that were either unused, or minimally used, have been removed from the distribution.
 * The `ensureIndex` and related methods have been removed. The replacement is the new `createIndex` method.
-* `IndexSpec::dropDuplicates()` is now deprecated as it is a no-op in MongoDB 2.8.
+* `IndexSpec::dropDuplicates()` is now deprecated as it is a no-op in MongoDB 3.0.
 * The `QUERY` macro has been replaced by `MONGO_QUERY`.
 * The `ConnectionString::parse` method now requires it's argument to be in the MongoDB URL ("mongodb://...") format. To use the old format, use the new `ConnectionString::parseDeprecated` method.
 * The `ConnectionPool` and `ScopedDbConnection` classes have been removed.
