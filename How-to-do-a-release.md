@@ -15,7 +15,7 @@ This commit essentially removes the -pre (1.0.0-rc79-pre -> 1.0.0-rc79) and crea
 
 ### POST commit
 
-This commit prepares the branch for new commits towards a future release. (1.0.0-rc79 -> 1.0.0-rc80-pre)
+This commit prepares the branch for new commits towards a future release (1.0.0-rc79 -> 1.0.0-rc80-pre)
 
  - Update top level SConstruct's mongoclientVersion string
  - Update etc/doxygen/config's PROJECT_NUMBER string
