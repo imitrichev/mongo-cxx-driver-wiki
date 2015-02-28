@@ -1,7 +1,7 @@
 ### Table of Contents
 - [**How to ask for Help**](Download-and-Compile-the-Legacy-Driver#how-to-ask-for-help)
 - [Get the source code](Download-and-Compile-the-Legacy-Driver#get-the-source-code)
-- [Choose a branch]Download-and-Compile-the-Legacy-Driver#choose-a-branch)
+- [Choose a branch](Download-and-Compile-the-Legacy-Driver#choose-a-branch)
   - [legacy branch](Download-and-Compile-the-Legacy-Driver#legacy-branch)
   - [26compat branch](Download-and-Compile-the-Legacy-Driver#26compat-branch)
 - [Compile the Driver](Download-and-Compile-the-Legacy-Driver#compile-the-driver)
