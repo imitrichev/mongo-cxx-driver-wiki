@@ -2,13 +2,11 @@
 
 The 26compat release series tracks the server 2.6 releases one-to-one. As a result, it receives only bugfixes and small updates necessary to keep it building in isolation.
 
-The legacy release series, on the other hand, is under active development. Our philosophy is to keep the legacy branch as close to the 26compat branch as is reasonable, but that when weighing new features against compatibility, we will choose new features. As a result the legacy branch is not 100% source compatible with the 26compat branch.
+The legacy release series, on the other hand, is a permanent and diverging fork. Our philosophy is to keep the legacy branch as close to the 26compat branch as is reasonable, but that when weighing new features against compatibility, we will choose new features. As a result the legacy branch is not 100% source compatible with the 26compat branch.
 
 This page attempts to serve as a transition guide for those users looking to migrate from the 26compat branch to the legacy branch. Note that it does *not* discuss new features in detail and simply points to the per-release notes.
 
-> **NOTE**: This is a living document, and tracks the current state of the legacy branch. While we have attempted to capture the big ticket breakages here, there are likely to be small ones that we have missed. The C++ driver developers would appreciate it greatly if, when you are moving from 26compat to legacy, you find issues not tracked here: please send us a pull request so we can keep this page up to date and useful.
-
-**Warning: The legacy branch is currently unstable and under active development.**
+> **NOTE**: This is a living document, and tracks the current state of the legacy branch. While we have attempted to capture the big ticket breakages here, there are likely to be small ones that we have missed. The C++ driver developers would appreciate it if, when moving from 26compat to legacy, you find issues not tracked here: please send us a pull request so we can keep this page up to date and useful.
 
 # Breaking Changes
 
@@ -74,6 +72,8 @@ run all tests and client examples     |`test`
 
 Please see the release notes for the individual legacy branch releases for details on improvements in each release:
 
+* [legacy-1.0.0](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0)
+* [legacy-1.0.0-rc4](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc4)
 * [legacy-1.0.0-rc3](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc3)
 * [legacy-1.0.0-rc2](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc2)
 * [legacy-1.0.0-rc1](https://github.com/mongodb/mongo-cxx-driver/releases/tag/legacy-1.0.0-rc1)
