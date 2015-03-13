@@ -11,13 +11,13 @@ in a few short minutes.
 
 The C++ driver uses [libbson](https://github.com/mongodb/libbson) and the [MongoDB C driver](https://github.com/mongodb/mongo-c-driver) internally. The C driver will install libbson if it isn't already present.
 
-1. Install the C driver prerequisites `automake`, `autoconf` and `libtool`. See the C-driver [README](https://github.com/mongodb/mongo-c-driver/blob/master/README.rst) for further instructions if you run into trouble.
+* Install the C driver prerequisites `automake`, `autoconf` and `libtool`. See the C-driver [README](https://github.com/mongodb/mongo-c-driver/blob/master/README.rst) for further instructions if you run into trouble.
 
-2. Clone the C driver. Currently we depend on APIs in the `1.2.0-dev` branch.
+* Clone the C driver. Currently we depend on APIs in the `1.2.0-dev` branch.
 
 `git clone -b 1.2.0-dev https://github.com/mongodb/mongo-c-driver`
 
-3. Build and install the C driver.
+* Build and install the C driver.
 
 `cd mongo-c-driver`
 
@@ -27,11 +27,11 @@ The C++ driver uses [libbson](https://github.com/mongodb/libbson) and the [Mongo
 
 ## Build and install the C++ driver
 
-1. Clone the repository.
+ * Clone the repository.
 
 `git clone -b master https://github.com/mongodb/mongo-cxx-driver`
 
-2. Build the driver.
+ * Build the driver.
 
 `cd mongo-cxx-driver/build`
 
@@ -39,7 +39,7 @@ The C++ driver uses [libbson](https://github.com/mongodb/libbson) and the [Mongo
 
 `sudo make && sudo make install`
 
-3. Fire up your editor and copy in this code to a file called `hellomongo.cpp`:
+ * Fire up your editor and copy in this code to a file called `hellomongo.cpp`:
 ```c++
 #include <iostream>
 
