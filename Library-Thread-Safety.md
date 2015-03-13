@@ -7,7 +7,7 @@ Our recommendation is to  **always give each thread its own `mongocxx::client`**
 ### Never do this
 
 ```c++
-
+mongocxx::instance instance{};
 mongocxx::client c{};
 auto db1 = c["db1"];
 auto db2 = c["db2"];
@@ -30,6 +30,7 @@ In the above example, even though the two databases are individually synchronize
 ## A better version
 
 ```c++
+mongocxx::instance instance{};
 mongocxx::client c1{};
 mongocxx::client c2{}
 std::mutex c1_mtx{};
@@ -49,7 +50,7 @@ std::thread([]() { threadfunc("db2", c2, c2_mtx); threadfunc("db1", c1, c1_mtx);
 ## The best version
 
 ```c++
-
+mongocxx::instance instance{};
 // don't even bother sharing clients. Just give each thread its own,
 auto threadfunc = [](stdx::string_view dbname) {
     mongocxx::client c{};
