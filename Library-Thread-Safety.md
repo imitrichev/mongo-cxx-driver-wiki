@@ -1,4 +1,4 @@
-**Always give each thread its own `mongocxx::client`**. You cannot use a client or any of its child objects across threads multiple threads.
+**Always give each thread its own `mongocxx::client`**. You cannot use a client or any of its child objects across multiple threads.
 
 In general each `mongocxx::client` object AND all of its child objects **should be used by a single thread at a time**.
 
