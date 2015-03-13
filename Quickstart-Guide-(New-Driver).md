@@ -25,7 +25,7 @@ The C++ driver uses [libbson](https://github.com/mongodb/libbson) and the [Mongo
 
 `make && sudo make install`
 
-## Build the C++ driver
+## Build and install the C++ driver
 
 1. Clone the repository.
 
