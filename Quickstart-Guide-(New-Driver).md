@@ -68,6 +68,7 @@ int main(int, char**) {
 ```
 
 You can compile with:
+
 `c++ --std=c++11 hellomongo.cpp -o hellomongo $(pkg-config --cflags --libs mongocxx)`
  
 
