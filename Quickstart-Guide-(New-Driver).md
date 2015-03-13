@@ -1,5 +1,3 @@
-# Quickstart Guide
-
 The goal of this guide is to get you to the point where you can build a simple application with the driver
 in a few short minutes.
 
