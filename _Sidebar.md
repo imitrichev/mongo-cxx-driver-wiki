@@ -4,6 +4,7 @@
 ## New Driver Docs
 
 - [Quickstart Guide](Quickstart-Guide-(New-Driver))
+- [Library Thread Safety](Library-Thread-Safety)
 - [Versioning](C---Driver-Versioning-Scheme)
 - [API Documentation](http://mongodb.github.io/mongo-cxx-driver/)
 
