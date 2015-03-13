@@ -2,6 +2,8 @@
 
 *Note: the new driver, which is still in development, can be found in the [master branch](https://github.com/mongodb/mongo-cxx-driver/tree/master).*
 
+- [Quickstart Guide](Quickstart-Guide-(New-Driver))
+
 ### Maintainer Notes
 
 - [C++ Driver Versioning Scheme](C---Driver-Versioning-Scheme)
