@@ -2,7 +2,7 @@
 
 In general each `mongocxx::client` object AND all of its child objects **should be used by a single thread at a time**.
 
-Even if you create multiple child objects from a single `client`, and synchronize them individually, that is unsafe as they will concurrently modify internal structures.
+Even if you create multiple child objects from a single `client`, and synchronize them individually, that is unsafe as they will concurrently modify internal structures of the `client`.
 
 ### Never do this
 
