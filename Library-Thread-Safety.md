@@ -21,8 +21,8 @@ auto threadfunc = [](mongocxx::database& db, std::mutex& mtx) {
 
 // BAD! these two databases are individually synchronized, but they are derived from the same
 // client, so they can only be accessed by one thread at a time
-std::thread([]() { threadfunc(db1, db1_mtx); threadfunc(db2, db2_mtx); }
-std::thread([]() { threadfunc(db2, db2_mtx); threadfunc(db1, db1_mtx); }
+std::thread([]() { threadfunc(db1, db1_mtx); threadfunc(db2, db2_mtx); });
+std::thread([]() { threadfunc(db2, db2_mtx); threadfunc(db1, db1_mtx); });
 ```
 
 In the above example, even though the two databases are individually synchronized, they are derived from the same client. There is shared state inside the library that is now being modified without synchronization.
@@ -43,8 +43,8 @@ auto threadfunc = [](stdx::string_view dbname, mongocxx::client& client, std::mu
 
 // Good! these two clients are individually synchronized, so it is safe to share them between
 // threads.
-std::thread([]() { threadfunc("db1", c1, c1_mtx); threadfunc("db2", c2, c2_mtx); }
-std::thread([]() { threadfunc("db2", c2, c2_mtx); threadfunc("db1", c1, c1_mtx); }
+std::thread([]() { threadfunc("db1", c1, c1_mtx); threadfunc("db2", c2, c2_mtx); });
+std::thread([]() { threadfunc("db2", c2, c2_mtx); threadfunc("db1", c1, c1_mtx); });
 ```
 
 ## The best version
@@ -55,8 +55,17 @@ auto threadfunc = [](mongocxx::client& client, stdx::string_view dbname) {
     client[dbname]["col"].insert({});
 }
 // don't even bother sharing clients. Just give each thread its own,
-std::thread([]() { mongocxx::client c{}; threadfunc(c, "db1"); threadfunc(c, "db2"); }
-std::thread([]() { mongocxx::client c{}; threadfunc(c, "db2"); threadfunc(c, "db1"); }
+std::thread([]() { 
+    mongocxx::client c{}; 
+    threadfunc(c, "db1"); 
+    threadfunc(c, "db2"); 
+});
+
+std::thread([]() { 
+    mongocxx::client c{}; 
+    threadfunc(c, "db2");
+    threadfunc(c, "db1"); 
+});
 ```
 
 In most programs, clients will be long lived - so its less of a hassle (and more performant)
