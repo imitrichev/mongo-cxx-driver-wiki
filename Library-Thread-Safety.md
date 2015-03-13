@@ -51,14 +51,12 @@ std::thread([]() { threadfunc("db2", c2, c2_mtx); threadfunc("db1", c1, c1_mtx);
 
 ```c++
 mongocxx::instance instance{};
-// don't even bother sharing clients. Just give each thread its own,
-auto threadfunc = [](stdx::string_view dbname) {
-    mongocxx::client c{};
+auto threadfunc = [](mongocxx::client& client, stdx::string_view dbname) {
     client[dbname]["col"].insert({});
 }
-
-std::thread([]() { threadfunc("db1"); threadfunc("db2"); }
-std::thread([]() { threadfunc("db2"); threadfunc("db1"); }
+// don't even bother sharing clients. Just give each thread its own,
+std::thread([]() { mongocxx::client c{}; threadfunc(c, "db1"); threadfunc(c, "db2"); }
+std::thread([]() { mongocxx::client c{}; threadfunc(c, "db2"); threadfunc(c, "db1"); }
 ```
 
 In most programs, clients will be long lived - so its less of a hassle (and more performant)
