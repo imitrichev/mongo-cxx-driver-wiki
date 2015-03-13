@@ -3,6 +3,7 @@
 *Note: the new driver, which is still in development, can be found in the [master branch](https://github.com/mongodb/mongo-cxx-driver/tree/master).*
 
 - [Quickstart Guide](Quickstart-Guide-(New-Driver))
+- [Library Threadsafety](Library-Thread-Safety) - A must read for anyone writing a multithreaded program with the library.
 
 ### Maintainer Notes
 
