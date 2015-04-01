@@ -53,8 +53,10 @@ int main(int, char**) {
     mongocxx::instance inst{};
     mongocxx::client conn{};
 
+    bsoncxx::builder::stream::document document{};
+
     auto collection = conn["testdb"]["testcollection"];
-    auto document = document{} << "hello" << "world";
+    document << "hello" << "world";
 
     collection.insert_one(document.view());
     auto cursor = collection.find({});
@@ -67,6 +69,6 @@ int main(int, char**) {
 
 You can compile with:
 
-`c++ --std=c++11 hellomongo.cpp -o hellomongo $(pkg-config --cflags --libs mongocxx)`
+`c++ --std=c++11 hellomongo.cpp -o hellomongo $(pkg-config --cflags --libs libmongocxx)`
  
 
