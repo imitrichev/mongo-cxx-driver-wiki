@@ -45,7 +45,7 @@ If you are having difficulty building the driver after reading the below instruc
    - If you built boost from source, please include your boost build invocation as well.
  - The complete SCons invocation.
    - Example: _scons -j10 install_
- - The output of the configure phase of the build.
+ - The output of the configure phase of the build. If the configure phase failed (e.g. boost was not found), please attach the contents of the file build/scons/config.log.
  - The error you encountered. This may be compiler, SCons, or other output.
 
 Failure to include the relevant information will result in additional round-trip communications to ascertain the necessary details, delaying a useful response. Here is a made-up example of a help request that provides the relevant information:
