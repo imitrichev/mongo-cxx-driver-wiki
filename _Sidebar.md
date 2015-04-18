@@ -12,7 +12,7 @@
 
 ### Getting Started
 
- - [Download and Compile](Download-and-Compile)
+ - [Download and Compile](Download-and-Compile-The-Legacy-Driver)
  - [Tutorial (legacy and 26compat)](Tutorial)
  - [BSON Helper Functions](BSON Helper Functions)
 
