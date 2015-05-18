@@ -10,7 +10,7 @@ Next, you may wish to take a look at the [MongoDB Manual](http://docs.mongodb.or
 
 ### Installing the Driver Library and Headers
 
-Please see [download and compile page](Download and Compile) for instructions on how to download, build, and install the C++ client driver.
+Please see [download and compile page](Download-And-Compile-The-Legacy-Driver) for instructions on how to download, build, and install the C++ client driver.
 
 ### Initializing the Driver Library
 
