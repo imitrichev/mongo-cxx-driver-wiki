@@ -23,6 +23,7 @@
     - [Building a DLL](Download-and-Compile-the-Legacy-Driver#building-a-dll-new-in-version-255)
     - [Building multiple Windows library variants](Download-and-Compile-the-Legacy-Driver#building-multiple-windows-library-variants)
 - [Using the driver in your application](Download-and-Compile-the-Legacy-Driver#using-the-driver-in-your-application)
+  - [Initialization and Configuration](Download-and-Compile-the-Legacy-Driver#initialization-and-configuration)
   - [Client Headers](Download-and-Compile-the-Legacy-Driver#client-headers)
   - [Client Libraries](Download-and-Compile-the-Legacy-Driver#client-libraries)
     - [Windows autolinking](Download-and-Compile-the-Legacy-Driver#windows-autolinking)
