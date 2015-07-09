@@ -304,6 +304,13 @@ mongoclient-gd.pdb
 
 ### Using the driver in your application
 
+#### Initialization and Configuration
+
+NOTE: You *must* initialize the legacy driver before use. Both the 26compat and legacy drivers also offer some configuration options, though the mechanisms differ. Please see the following for additional details
+
+ - [[Initialization and Configuration (legacy)|Configuring the Legacy Driver]]
+ - [[Configuration (26compat)|Configuring the 26compat Driver]]
+
 #### Client Headers
 
 There are only two headers intended for direct inclusion by consumers of the library:
