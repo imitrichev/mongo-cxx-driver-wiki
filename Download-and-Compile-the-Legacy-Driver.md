@@ -90,7 +90,7 @@ While collecting this information will take some additional time and effort, pro
 
 To get a repository that you can build, you can clone the sources, and then check out the branch or tag that you are interested in:
 ```sh
-git clone git@github.com:mongodb/mongo-cxx-driver.git
+git clone https://github.com/mongodb/mongo-cxx-driver.git
 ```
 
 Alternatively, see the [releases](https://github.com/mongodb/mongo-cxx-driver/releases) page for downloadable tarball files containing the files associated with each released tag.
