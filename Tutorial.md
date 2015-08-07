@@ -66,6 +66,7 @@ connected ok
  - Since the tutorial program attempts to connect to a MongoDB database server, you must start it by running mongod before running the tutorial.
  - You may need to append -mt to boost_filesystem and boost_program_options. If using a recent boost, -mt is not needed anymore.
  - You may need to use -I and -L to specify the locations of your mongo and boost headers and libraries.
+ - If using user authentication with the default authentication mechanism SCRAM-SHA-1 you need to additionally specify `-lssl` and `-lcrypto`
  - If using the 26compat branch you need to additionally specify `-lboost_filesystem` and `-lboost_program_options`
 
 ### BSON
